@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/03 22:43:16 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/04 14:20:07 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/04 14:54:06 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int ac, char **av)
 {
 	if (ac < 2)
 	{
-		ft_error("Usage: ./asm file1 file2 ...");
+		ft_error("Usage: ./asm file1 file2 ...\n");
 		return (0);
 	}
 	av++;

@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/03 21:37:07 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/04 13:57:13 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/04 15:02:09 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,26 @@
 # include "op.h"
 # include "../libftprintf/includes/ft_printf.h"
 
+typedef struct	s_as
+{
+	char		*old_path;
+	char		*new_path;
+	char		*file_string;
+	char		*name;
+	char		*comment;
+	char		*source_code;
+}				t_as;
+
 void	asm_corewar(char *file_path);
 
-t_as	*get_bytes_asm_corewar(char *file_string);
+char	*get_new_path_asm_corewar(char *file_path);
 
-t_as	*create_byte_asm_corewar(char byte);
+void	free_hash_asm_corewar(t_as *to_free);
 
-void	free_asm_corewar(t_as *bytes);
+void	dump_hash_asm_corewar(t_as *to_dump);
 
-void	put_bytes_asm_corewar(t_as *bytes, int fd);
+t_as	*start_hash_asm_corewar(void);
+
+void	fill_hash_asm_corewar(t_as *hash);
 
 #endif
