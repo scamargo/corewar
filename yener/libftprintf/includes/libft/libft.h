@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/27 10:49:19 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/03 22:26:33 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/03 22:56:41 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,5 +189,10 @@ void				free_cdp(char **dp);
 char				*join_cdp(char **dp, char separator);
 
 void				ft_error(char *string);
+
+char				*read_file(char *path);
+
+void				ft_strdel4(char **to_del1, char **to_del2, char **to_del3,
+						char **to_del4);
 
 #endif

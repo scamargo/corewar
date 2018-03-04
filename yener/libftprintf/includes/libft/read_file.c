@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   asm.h                                              :+:      :+:    :+:   */
+/*   read_file.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/03 21:37:07 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/03 22:48:42 by ytuz             ###   ########.fr       */
+/*   Created: 2018/03/03 22:49:57 by ytuz              #+#    #+#             */
+/*   Updated: 2018/03/03 22:57:28 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ASM_H
-# define ASM_H
-# include "op.h"
-# include "../libftprintf/includes/ft_printf.h"
+#include "libft.h"
 
-void	asm_corewar(char *file_path);
+char	*read_file(char *path)
+{
+	int		fd;
+	char	*contents;
+	char	buffer;
 
-#endif
+	fd = open(path, O_RDONLY);
+	if (fd == -1)
+		return (0);
+	while (read(fd, &buffer, 1))
+		ft_strpchar(&contents, buffer);
+	return (contents);
+}
