@@ -6,7 +6,7 @@
 #    By: ytuz <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/27 10:31:52 by ytuz              #+#    #+#              #
-#    Updated: 2018/02/25 22:52:40 by ytuz             ###   ########.fr        #
+#    Updated: 2018/03/03 22:27:00 by ytuz             ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -24,7 +24,7 @@ SRCS =	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c 
 		ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_strpstr.c\
 		ft_strpchar.c ft_putnbr2.c ft_putchar2.c ft_struntil.c ft_reassign.c \
 		ft_memdel4.c ft_struntil2.c ft_repchar.c ft_delete.c \
-		ft_addchar.c ft_addstr.c free_cdp.c join_cdp.c
+		ft_addchar.c ft_addstr.c free_cdp.c join_cdp.c ft_error.c
 
 all:	$(NAME)
 
