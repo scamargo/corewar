@@ -23,5 +23,6 @@ char	*read_file(char *path)
 		return (0);
 	while (read(fd, &buffer, 1))
 		ft_strpchar(&contents, buffer);
+	close(fd);
 	return (contents);
 }

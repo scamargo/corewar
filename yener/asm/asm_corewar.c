@@ -6,24 +6,38 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/03 22:45:18 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/03 23:22:54 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/04 14:26:11 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
 
+static char	check_file_path_asm_corewar(char *file_path)
+{
+	char	return_status;
+
+	return_status = 1;
+	if (ft_strrchr(file_path, '.') == 0)
+		return_status = 0;
+	file_path = ft_strrchr(file_path, '.') + 1;
+	if (return_status == 1 && ft_strequ(file_path, "s") == 0)
+		return_status = 0;
+	if (return_status == 0)
+	{
+		ft_error(file_string);
+		ft_error(": Not a .s file\n");
+		return (0);
+	}
+	return (1);
+}
+
 void	asm_corewar(char *file_path)
 {
 	char	*file_string;
-	char	*assembled_string;
 	char	*new_path;
-	int		fd;
+	char	*preprocessed_string;
 
-	file_string = read_file(file_path);
+	if (check_file_path_asm_corewar(file_path) == 0)
+		return ;
 	new_path = get_new_path_asm_corewar(file_path);
-	fd = open(new_path, O_CREAT | O_RDWR);
-	assembled_string = get_assembled_string_asm_corewar(file_string);
-	ft_putstr_fd(assembled_string, fd);
-	close(fd);
-	ft_strdel4(&file_string, &assembled_string, &new_path, 0);
 }
