@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 14:43:53 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/04 17:07:09 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/04 22:14:05 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ t_as	*start_hash_asm_corewar(void)
 	new->name = 0;
 	new->comment = 0;
 	new->labels = 0;
-	new->line_bytes = 0;
 	return (new);
 }
 
@@ -48,8 +47,6 @@ void	dump_hash_asm_corewar(t_as *to_dump)
 		ft_printf("Comment: %s\n", to_dump->comment);
 	if (to_dump->labels)
 		ft_printf("Labels: %s\n", to_dump->labels);
-	if (to_dump->line_bytes)
-		ft_printf("Line byte count: %s\n", to_dump->line_bytes);
 }
 
 void	free_hash_asm_corewar(t_as *to_free)
@@ -60,6 +57,5 @@ void	free_hash_asm_corewar(t_as *to_free)
 	try_to_free_asm_corewar(to_free->name);
 	try_to_free_asm_corewar(to_free->comment);
 	try_to_free_asm_corewar(to_free->labels);
-	try_to_free_asm_corewar(to_free->line_bytes);
 	free(to_free);
 }

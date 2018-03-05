@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/03 21:37:07 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/04 19:18:44 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/04 23:13:00 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ typedef struct	s_as
 	char		*name;
 	char		*comment;
 	char		*labels;
-	char		*line_bytes;
 }				t_as;
 
 void	asm_corewar(char *file_path);
@@ -42,10 +41,21 @@ char	*get_labels_asm_corewar(char *source_code);
 
 void	get_encoded_asm_corewar(char **source_code);
 
-char	*get_line_bytes_asm_corewar(char *source_code);
-
-char	get_arg_byte_count_asm_corewar(char *args, char is_truncated);
-
 void	remove_comments_asm_corewar(char **source_code);
+
+char	check_for_comment_asm_corewar(char *line);
+
+char	check_if_acb_asm_corewar(char *op);
+
+char	check_if_trunc_asm_corewar(char *op);
+
+char	*get_single_direct_asm_corewar(char *single_arg, char is_trunc);
+
+char	*get_single_indirect_asm_corewar(char *single_arg, char is_trunc);
+
+void	get_preprocessed_asm_corewar(char **source_code);
+
+char	*get_new_line_helper_asm_corewar(char *op, char *arg, char is_acb,
+	char is_trunc);
 
 #endif

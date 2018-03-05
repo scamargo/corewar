@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 14:59:52 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/04 19:17:53 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/04 23:12:53 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	get_source_code_asm_corewar(char **file_string)
 	source_code = ft_strnew(0);
 	while (*dp)
 	{
-		if (**dp != '.' && **dp != COMMENT_CHAR &&
+		if (check_for_comment_asm_corewar(*dp) == 0 &&
 			check_line_whitespaces_asm_corewar(*dp))
 		{
 			ft_strpstr(&source_code, *dp);
@@ -76,8 +76,8 @@ void	fill_hash_asm_corewar(t_as *hash)
 	hash->name = get_name_asm_corewar(hash->file_string);
 	hash->comment = get_comment_asm_corewar(hash->file_string);
 	get_source_code_asm_corewar(&(hash->file_string));
+	hash->labels = get_labels_asm_corewar(hash->file_string);
+	get_encoded_asm_corewar(&(hash->file_string));
 	remove_comments_asm_corewar(&(hash->file_string));
-	//hash->labels = get_labels_asm_corewar(hash->file_string);
-	//get_encoded_asm_corewar(&(hash->file_string));
-	//hash->line_bytes = get_line_bytes_asm_corewar(hash->file_string);
+	get_preprocessed_asm_corewar(&(hash->file_string));
 }
