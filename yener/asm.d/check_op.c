@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 21:43:41 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/04 22:44:19 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/05 00:28:42 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ static char	*get_single_arg_asm_corewar(char *single_arg, char is_trunc)
 {
 	char	*single_bytes;
 
-	single_bytes = ft_strnew(0);
 	if (*single_arg == 'r')
 	{
+		single_bytes = ft_strnew(0);
 		ft_strpstr(&single_bytes, single_arg);
 		ft_strpchar(&single_bytes, ' ');
 		return (single_bytes);
@@ -40,6 +40,7 @@ static char	*get_arg_bytes_asm_corewar(char *arg, char is_trunc)
 		single_arg = ft_struntil2(arg, ',');
 		single_arg_bytes  = get_single_arg_asm_corewar(single_arg, is_trunc);
 		ft_strpstr(&arg_bytes, single_arg_bytes);
+		ft_strdel(&single_arg_bytes);
 		ft_strdel(&single_arg);
 		while (*arg && *arg != ',')
 			arg++;

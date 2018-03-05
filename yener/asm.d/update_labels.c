@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 23:15:24 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/05 00:11:08 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/05 00:35:03 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,13 @@ static void	update_next_label_asm_corewar(char **line, char *labels,
 	int		label_line;
 	int		direct;
 
-	label = ft_strnew(0);
 	parser = ft_strchr(*line, ':');
 	parser++;
 	label = ft_struntil2(parser, ' ');
 	label_line = get_label_line_asm_corewar(label, labels);
 	direct = get_byte_difference_asm_corewar(line_count, label_line, source_code);
-	ft_printf("LINE: %s\nDIRECT: %d\n", *line, direct);
 	update_next_label_helper_asm_corewar(line, direct);
+	ft_strdel(&label);
 }
 
 
