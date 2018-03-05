@@ -15,13 +15,10 @@
 void	ft_addchar(char **head, char *location, char to_add)
 {
 	char	*first_half;
-	char	*second_half;
 
 	first_half = ft_struntil(*head, location);
 	ft_strpchar(&first_half, to_add);
-	second_half = ft_strdup(location);
-	ft_strpstr(&first_half, second_half);
-	free(second_half);
+	ft_strpstr(&first_half, location);
 	ft_strdel(head);
 	*head = first_half;
 }

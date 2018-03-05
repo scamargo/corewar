@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 23:53:59 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/04 23:58:19 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/05 00:12:29 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	update_next_label_helper_asm_corewar(char **line, int direct)
 	itoa_result = ft_itoa(direct);
 	while (*(*line + index) != ' ')
 		ft_delete(line, *line + index);
+	ft_printf("DELETED LINE: %s\n", *line);
 	ft_addstr(line, *line + index, itoa_result);
 	ft_strdel(&itoa_result);
 }
