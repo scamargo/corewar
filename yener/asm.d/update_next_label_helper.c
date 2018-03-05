@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_delete.c                                        :+:      :+:    :+:   */
+/*   update_next_label_helper.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/24 19:06:57 by ytuz              #+#    #+#             */
-/*   Updated: 2018/02/24 19:07:05 by ytuz             ###   ########.fr       */
+/*   Created: 2018/03/04 23:53:59 by ytuz              #+#    #+#             */
+/*   Updated: 2018/03/04 23:58:19 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "asm.h"
 
-void	ft_delete(char **head, char *to_del)
+void	update_next_label_helper_asm_corewar(char **line, int direct)
 {
-	char	*first_half;
-	char	*second_half;
+	int		index;
+	char	*itoa_result;
+	char	*label_head;
 
-	first_half = ft_struntil(*head, to_del);
-	second_half = ft_strdup(to_del + 1);
-	ft_strpstr(&first_half, second_half);
-	free(second_half);
-	ft_strdel(head);
-	*head = first_half;
+	label_head = ft_strchr(*line, ':');
+	index = label_head - *line;
+	itoa_result = ft_itoa(direct);
+	while (*(*line + index) != ' ')
+		ft_delete(line, *line + index);
+	ft_addstr(line, *line + index, itoa_result);
+	ft_strdel(&itoa_result);
 }
