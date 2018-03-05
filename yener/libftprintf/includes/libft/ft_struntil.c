@@ -16,6 +16,8 @@ char	*ft_struntil(char *start_incl, char *end_excl)
 {
 	char	*output;
 
+	if (end_excl == 0)
+		return (ft_strdup(start_incl));
 	output = ft_strnew(end_excl - start_incl);
 	output = ft_strncpy(output, start_incl, end_excl - start_incl);
 	return (output);

@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/03 21:37:07 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/04 17:54:33 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/04 19:18:44 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ char	*get_line_bytes_asm_corewar(char *source_code);
 
 char	get_arg_byte_count_asm_corewar(char *args, char is_truncated);
 
-typedef char* t_op[8];
+void	remove_comments_asm_corewar(char **source_code);
 
 #endif

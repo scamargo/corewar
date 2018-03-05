@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 14:59:52 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/04 17:54:29 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/04 19:17:53 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,8 @@ void	fill_hash_asm_corewar(t_as *hash)
 	hash->name = get_name_asm_corewar(hash->file_string);
 	hash->comment = get_comment_asm_corewar(hash->file_string);
 	get_source_code_asm_corewar(&(hash->file_string));
-	hash->labels = get_labels_asm_corewar(hash->file_string);
-	get_encoded_asm_corewar(&(hash->file_string));
-	hash->line_bytes = get_line_bytes_asm_corewar(hash->file_string);
+	remove_comments_asm_corewar(&(hash->file_string));
+	//hash->labels = get_labels_asm_corewar(hash->file_string);
+	//get_encoded_asm_corewar(&(hash->file_string));
+	//hash->line_bytes = get_line_bytes_asm_corewar(hash->file_string);
 }

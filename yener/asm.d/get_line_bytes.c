@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 17:07:30 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/04 17:54:35 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/04 19:17:58 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ char		*get_line_bytes_asm_corewar(char *source_code)
 		ft_strpstr(&line_bytes, single_line_bytes);
 		ft_strpchar(&line_bytes, ' ');
 		line_count++;
+		ft_strdel(&single_line_bytes);
 	}
 	free_cdp(dp);
 	return (line_bytes);
