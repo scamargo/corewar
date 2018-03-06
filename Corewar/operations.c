@@ -6,16 +6,26 @@
 /*   By: tyang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 11:50:17 by tyang             #+#    #+#             */
-/*   Updated: 2018/03/05 11:59:45 by tyang            ###   ########.fr       */
+/*   Updated: 2018/03/05 15:59:38 by tyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
 
-bool	purge(t_list **all_process)
+bool	purge(t_list *process_node)
 {
-	while (*all_process)
+	t_list *curr_node;
+
+	while (*process_node)
 	{
-		if (*all_process->alive == 0)
-			
+		curr_node = process_node->content;
+		if (curr_node->alive == 1)
+			curr_node->alive = 0;
+		else
+			ft_removeone(curr_node);
+	}
 }
+
+void	live_op(t_list *process_node, int cycle)
+{
+	
