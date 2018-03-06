@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 23:48:20 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/05 00:33:21 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/05 19:26:48 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	get_byte_difference_helper_asm_corewar(int small, int large,
 		char *source_code)
 {
-	char	byte_difference;
+	int	byte_difference;
 
 	byte_difference = 0;
 	large -= small;

@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   update_next_label_helper.c                         :+:      :+:    :+:   */
+/*   get_total_byte_count.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/04 23:53:59 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/05 19:05:55 by ytuz             ###   ########.fr       */
+/*   Created: 2018/03/05 21:10:31 by ytuz              #+#    #+#             */
+/*   Updated: 2018/03/05 21:19:47 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
 
-void	update_next_label_helper_asm_corewar(char **line, int direct)
+unsigned int	get_total_byte_count_asm_corewar(char *source_code)
 {
-	int		index;
-	char	*itoa_result;
-	char	*label_head;
+	unsigned int	byte_count;
 
-	label_head = ft_strchr(*line, ':');
-	index = label_head - *line;
-	itoa_result = ft_itoa(direct);
-	while (*(*line + index) != ' ')
-		ft_delete(line, *line + index);;
-	ft_addstr(line, *line + index, itoa_result);
-	ft_strdel(&itoa_result);
+	byte_count = 0;
+	while (*source_code)
+	{
+		if (*source_code != ' ' && *source_code != '\n')
+		{
+			byte_count++;
+			while (*source_code != ' ' && *source_code != '\n')
+				source_code++;
+		}
+		else
+			source_code++;
+	}
+	return (byte_count);
 }
