@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 14:59:52 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/05 20:26:35 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/05 22:41:55 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,4 +85,5 @@ void	fill_hash_asm_corewar(t_as *hash)
 	update_acb_asm_corewar(&(hash->file_string));
 	delete_r_and_percent_asm_corewar(&(hash->file_string));
 	update_periods_asm_corewar(&(hash->file_string));
+	add_header_asm_corewar(hash);
 }

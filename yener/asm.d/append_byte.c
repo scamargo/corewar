@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   append_byte.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/03 22:43:16 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/05 21:38:06 by ytuz             ###   ########.fr       */
+/*   Created: 2018/03/05 21:02:22 by ytuz              #+#    #+#             */
+/*   Updated: 2018/03/05 21:03:20 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
 
-int	main(int ac, char **av)
+void	append_byte_asm_corewar(char **to_append, char byte)
 {
-	if (ac < 2)
-	{
-		ft_error("Usage: ./asm file1 file2 ...\n");
-		return (0);
-	}
-	av++;
-	while (*av)
-	{
-		asm_corewar(*av);
-		av++;
-	}
-	return (0);
+	char	*itoa_result;
+
+	itoa_result = ft_itoa(byte);
+	ft_strpstr(to_append, itoa_result);
+	ft_strpchar(to_append, ' ');
+	ft_strdel(&itoa_result);
 }

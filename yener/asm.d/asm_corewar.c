@@ -6,11 +6,32 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/03 22:45:18 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/04 22:44:27 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/05 22:31:53 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
+
+static void	create_file_asm_corewar(t_as *hash)
+{
+	int		fd;
+	char	*source;
+
+	fd = open(hash->new_path, O_CREAT | O_RDWR, S_IRWXU | S_IRWXG | S_IRWXO);
+	source = hash->file_string;
+	while (*source)
+	{
+		if (*source == ' ' || *source == '\n')
+			source++;
+		else
+		{
+			ft_putchar_fd((char)(ft_atoi(source)), fd);
+			while (*source && *source != ' ' && *source != '\n')
+				source++;
+		}
+	}
+	close(fd);
+}
 
 static char	check_if_exists_asm_corewar(char *file_path)
 {
@@ -61,5 +82,6 @@ void	asm_corewar(char *file_path)
 	}
 	fill_hash_asm_corewar(hash);
 	dump_hash_asm_corewar(hash);
+	create_file_asm_corewar(hash);
 	free_hash_asm_corewar(hash);
 }

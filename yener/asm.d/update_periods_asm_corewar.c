@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 19:38:04 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/05 20:25:14 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/05 22:41:15 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void	update_next_period_asm_corewar(char **source_code)
 	end_index = start_index;
 	while (*(*source_code + end_index) == '.')
 		end_index += 2;
-	end_index++;
+	end_index = ft_strchr(*source_code + end_index, ' ') - *source_code;
 	period_string = get_period_string_asm_corewar(*source_code, start_index, end_index);
 	process_period_string_asm_corewar(&period_string);
 	delete_current_period_asm_corewar(source_code, start_index, end_index);
