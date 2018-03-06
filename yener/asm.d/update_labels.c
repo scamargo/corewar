@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 23:15:24 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/05 18:12:20 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/05 19:37:57 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@ static int	get_byte_difference_asm_corewar(int start_line, int end_line,
 		char *source_code)
 {
 	if (start_line > end_line)
-	{
-		ft_printf("START LINE: %d\nEND LINE: %d\n", start_line, end_line);
 		return (-1 * get_byte_difference_asm_corewar(end_line, start_line, source_code));
-	}
 	if (start_line == end_line)
 		return (0);
 	return (get_byte_difference_helper_asm_corewar(start_line, end_line,

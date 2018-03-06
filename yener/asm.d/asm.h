@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/03 21:37:07 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/05 14:19:23 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/05 19:50:56 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,7 @@ void	update_op_codes_asm_corewar(char **source_code);
 void	update_acb_asm_corewar(char **source_code);
 
 void	delete_r_and_percent_asm_corewar(char **source_code);
+
+void	update_periods_asm_corewar(char **source_code);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/04 23:53:59 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/05 18:12:39 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/05 19:05:55 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	update_next_label_helper_asm_corewar(char **line, int direct)
 	label_head = ft_strchr(*line, ':');
 	index = label_head - *line;
 	itoa_result = ft_itoa(direct);
-	ft_printf("DIRECT: %d\nITOA RESULT: %s\n", direct, itoa_result);
 	while (*(*line + index) != ' ')
 		ft_delete(line, *line + index);;
 	ft_addstr(line, *line + index, itoa_result);
