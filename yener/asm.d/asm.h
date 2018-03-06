@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/03 21:37:07 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/04 23:57:13 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/05 14:19:23 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,11 @@ int		get_byte_difference_helper_asm_corewar(int small, int large, char *source_c
 void	update_labels_asm_corewar(char **source_code, char *labels);
 
 void	update_next_label_helper_asm_corewar(char **line, int direct);
+
+void	update_op_codes_asm_corewar(char **source_code);
+
+void	update_acb_asm_corewar(char **source_code);
+
+void	delete_r_and_percent_asm_corewar(char **source_code);
 
 #endif

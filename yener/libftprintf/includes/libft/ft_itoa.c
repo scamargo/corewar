@@ -39,6 +39,7 @@ char		*ft_itoa(int number)
 	if (number < 0)
 	{
 		to_delete = ft_itoa(number * -1);
+		ft_strpchar(&string, '-');
 		ft_itoa_join(&string, &to_delete);
 		return (string);
 	}
