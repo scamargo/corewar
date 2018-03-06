@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/03 22:45:18 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/05 22:31:53 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/05 22:43:28 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	asm_corewar(char *file_path)
 		return ;
 	}
 	fill_hash_asm_corewar(hash);
-	dump_hash_asm_corewar(hash);
+	//dump_hash_asm_corewar(hash);
 	create_file_asm_corewar(hash);
 	free_hash_asm_corewar(hash);
 }
