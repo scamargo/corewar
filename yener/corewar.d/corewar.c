@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 14:14:40 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/06 14:26:24 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/06 14:55:39 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,4 @@ void	corewar(char **av)
 	t_cw	*hash;
 
 	av++;
-	load_champions_corewar(av, hash);
-		
+	load_cham	
