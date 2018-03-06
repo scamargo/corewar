@@ -6,7 +6,7 @@
 #    By: scamargo <scamargo@student.42.us.org>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/30 21:11:57 by scamargo          #+#    #+#              #
-#    Updated: 2018/03/05 15:30:24 by scamargo         ###   ########.fr        #
+#    Updated: 2018/03/06 11:08:47 by tyang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c 
 		ft_sqrt.c ft_power.c ft_sort_integer_table.c ft_factorial.c ft_range.c \
 		ft_init_chartable.c ft_destroy_chartable.c ft_strrev.c \
 		ft_doublynew.c ft_doublyadd.c ft_doublydelone.c \
-		ft_arrlist.c ft_itoa_base.c
+		ft_arrlist.c ft_itoa_base.c ft_doublycount.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -32,15 +32,15 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	#gcc -Wextra -Wall -Werror -c $(SRCS) -I includes/
-	ar rcs $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
 
 %.o: %.c
-	gcc -Wextra -Wall -Werror -c $< -I includes/
+	@gcc -Wextra -Wall -Werror -c $< -I includes/
 
 clean:
-	/bin/rm -f $(OBJS)
+	@/bin/rm -f $(OBJS)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all

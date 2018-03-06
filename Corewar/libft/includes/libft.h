@@ -6,7 +6,7 @@
 /*   By: scamargo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 12:56:43 by scamargo          #+#    #+#             */
-/*   Updated: 2018/03/05 15:20:25 by scamargo         ###   ########.fr       */
+/*   Updated: 2018/03/06 11:52:13 by tyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,7 @@ t_array			*arr_init(int initial_size);
 char			*ft_itoa_base(int nbr, int base);
 t_doubly		*ft_doublynew(void const *content, size_t content_size);
 void			ft_doublyadd(t_doubly **alst, t_doubly *new);
-void			ft_doublydelone(t_doubly **alst, void (*del)(void *, size_t));
+t_doubly		*ft_doublydelone(t_doubly *curr_node, t_doubly **head, void (*del)(void *, size_t));
+int				ft_doublycount(t_doubly *list);
 
 #endif

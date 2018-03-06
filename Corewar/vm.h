@@ -6,7 +6,7 @@
 /*   By: tyang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 11:06:46 by tyang             #+#    #+#             */
-/*   Updated: 2018/03/05 18:42:20 by tyang            ###   ########.fr       */
+/*   Updated: 2018/03/06 11:52:51 by tyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_args
 typedef struct s_process
 {
 	int			pc;
-	void		*registries;
+	char		registries[REG_NUMBER];
 	int			alive;
 }				t_process;
 
@@ -40,3 +40,9 @@ typedef struct s_cycle
 	int			cycles_to_die;
 	int			decrease_count;
 }				t_cycle;
+
+void			delete_process(void *process, size_t size);
+void			purge(t_doubly **head);
+t_cycle			*init_cycle();
+t_doubly		*create_processes();
+int				end_game_mechanics(t_doubly *process_node, t_cycle *c_vars);

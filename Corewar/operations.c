@@ -6,32 +6,36 @@
 /*   By: tyang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 11:50:17 by tyang             #+#    #+#             */
-/*   Updated: 2018/03/05 18:50:39 by tyang            ###   ########.fr       */
+/*   Updated: 2018/03/06 11:58:39 by tyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
-#include "libft.h"
 
 void	delete_process(void *process, size_t size)
 {
 	// TODO: free registry array
-	free(process->registries);
 	free(process);
+	process = NULL;
+	size = 0;
 }
 
-bool	purge(t_doubly *process_node)
+void	purge(t_doubly **head)
 {
-	t_process *current_process;
+	t_process	*current_process;
+	t_doubly	*curr_node;
 
-	while (process_node)
+	curr_node = *head;
+	while (curr_node)
 	{
-		current_process = (t_process*)process_node->content; 
+		current_process = (t_process*)curr_node->content;
 		if (current_process->alive)
+		{
 			current_process->alive = 0;
+			curr_node = curr_node->next;
+		}
 		else
-			ft_doublydelone(&process_node, delete_process);
-		process_node = process_node->next;
+			curr_node = ft_doublydelone(curr_node, head, delete_process);
 	}
 }
 
