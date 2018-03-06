@@ -6,11 +6,17 @@
 /*   By: tyang <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 11:20:17 by tyang             #+#    #+#             */
-/*   Updated: 2018/03/06 11:58:46 by tyang            ###   ########.fr       */
+/*   Updated: 2018/03/06 15:40:35 by scamargo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vm.h"
+#include "ft_printf.h"
+
+/*void	dump_core(char *core)
+{
+	char *hex = 
+*/
 
 int		main()
 {
@@ -25,8 +31,9 @@ int		main()
 	ft_memset(arena->core, 0,  MEM_SIZE);
 	arena->core[MEM_SIZE - 1] = '\0';
 	head = create_processes();
-	printf("%p this is the head pointer \n", head);
-	printf("%i\n", ft_doublycount(head));
+	ft_printf("42 in hex: %x\n: ", 42); 
+	ft_printf("%p this is the head pointer \n", head);
+	ft_printf("%i\n", ft_doublycount(head));
 	while (end_game_mechanics(head, c_vars))
 	{
 		c_vars->cycle++;
