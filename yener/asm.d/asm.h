@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/03 21:37:07 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/05 22:59:37 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/06 13:53:28 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,7 @@ void			add_header_asm_corewar(t_as *hash);
 void			append_byte_asm_corewar(char **to_append, char byte);
 
 unsigned int	get_total_byte_count_asm_corewar(char *source_code);
+
+char			*start_magic_number_asm_corewar(void);
 
 #endif

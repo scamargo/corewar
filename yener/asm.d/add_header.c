@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 20:35:35 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/05 21:46:23 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/06 13:59:33 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ static char	*get_header_asm_corewar(t_as *hash)
 	char	*prog_size;
 	char	*comment;
 
-	header = ft_strdup("0 -22 -125 -13 \n");
+	header = start_magic_number_asm_corewar();
 	name = get_name_bytes_asm_corewar(hash);
 	ft_strpstr(&header, name);
 	prog_size = get_prog_size_bytes_asm_corewar(hash->file_string);
