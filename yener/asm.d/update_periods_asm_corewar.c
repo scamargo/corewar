@@ -6,13 +6,37 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/05 19:38:04 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/05 19:50:52 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/05 19:55:58 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "asm.h"
 
-static char	*get_period_string_asm_corewar(char *source_code, 
+static void	delete_current_period_asm_corewar(char **source_code, int start_index, int end_index)
+{
+	int	bytes_to_delete;
+
+	bytes_to_delete = end_index - start_index + 1;
+	while (bytes_to_delete > 0)
+	{
+		ft_delete(source_code, *source_code + start_index);
+		bytes_to_delete--;
+	}
+}
+
+static char	*get_period_string_asm_corewar(char *source_code, int start_index,
+	int end_index)
+{
+	char	*period_string;
+
+	period_string = ft_strnew(0);
+	while (start_index <= end_index)
+	{
+		ft_strpchar(&period_string, *(source_code + start_index));
+		start_index++;
+	}
+	return (period_string);
+}
 
 static void	update_next_period_asm_corewar(char **source_code)
 {
