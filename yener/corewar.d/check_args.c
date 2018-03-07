@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 13:37:24 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/06 14:12:34 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/06 15:57:42 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,14 @@ char		check_args_corewar(int ac, char **av)
 	av++;
 	while (*av)
 	{
-		if (check_file_corewar(*av) == 0)
-			return (0);
-		av++;
+		if (**av == '-')
+			av += 2;
+		else
+		{
+			if (check_file_corewar(*av) == 0)
+				return (0);
+			av++;
+		}
 	}
 	return (1);
 }
