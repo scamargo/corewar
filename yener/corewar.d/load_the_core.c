@@ -6,13 +6,13 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 20:29:39 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/06 23:01:33 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/06 23:29:45 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "corewar.h"
 
-static char	get_max_champ_number_corewar(t_cw *hash)
+char		get_max_champ_number_corewar(t_cw *hash)
 {
 	t_ch	*champ;
 

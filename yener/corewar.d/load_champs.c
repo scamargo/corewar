@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 15:13:24 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/06 23:01:01 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/06 23:47:21 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,7 @@ static void	add_next_champ_corewar(char *champion, t_cw *hash)
 		champ->number = last->number + 1;
 	}
 	introduce_corewar(champ);
-	ft_printf("%s BYTES:\n", champ->name);
-	dump_bytes_corewar(champ->content, champ->size);
-	ft_putendl("END OF BYTES");
+	dump_champ_corewar(champ);
 }
 
 void		load_champs_corewar(char **champions, t_cw *hash)

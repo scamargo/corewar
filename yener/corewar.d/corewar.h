@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 13:32:35 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/06 23:01:03 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/06 23:47:19 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,13 @@ void				load_single_champ_corewar(t_cw *hash, t_ch *champ,
 char				check_argument_count_corewar(char **av);
 
 char				**get_champions_cdp_corewar(char **av);
+
+char				get_max_champ_number_corewar(t_cw *hash);
+
+t_pc				*start_process_corewar(unsigned int process_counter);
+
+void				load_processes_corewar(t_cw *hash);
+
+void				dump_champ_corewar(t_ch *champ);
 
 #endif

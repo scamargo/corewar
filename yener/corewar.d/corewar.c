@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 14:14:40 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/06 23:01:36 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/06 23:47:23 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void		corewar(char **av)
 	dump_cycles_number = get_dump_cycles_corewar(av);
 	hash = start_hash_corewar();
 	load_champs_corewar(champions, hash);
-	//load_processes_corewar(hash);
+	load_processes_corewar(hash);
 	dump_decimal_corewar(hash);
 	free_cdp(champions);
 	//fight_corewar(hash, dump_cycles_number);
