@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 21:46:03 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/06 21:59:17 by ytuz             ###   ########.fr       */
+/*   Updated: 2018/03/07 12:38:10 by ytuz             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char		**get_champions_cdp_corewar(char **av)
 		if (ft_strequ(*av, "-n"))
 		{
 			champions[ft_atoi(*(av + 1))] = ft_strdup(*(av + 2));
-			av += 2;
+			av += 3;
 		}
 		else
 		{
