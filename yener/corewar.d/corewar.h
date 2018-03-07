@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 13:32:35 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/06 20:04:05 by scamargo         ###   ########.fr       */
+/*   Updated: 2018/03/06 20:46:22 by scamargo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void				corewar(char **av);
 
 void				load_champs_corewar(char **av, t_cw *hash);
 
-void				dump_decimal_corewar(t_cw *hash, unsigned int max);
+void				dump_decimal_corewar(t_cw *hash);
  
 void				free_corewar(t_cw *hash);
 
@@ -58,5 +58,9 @@ unsigned int		get_champ_size_corewar(int fd);
 void				introduce_corewar(t_ch *champ);
 
 void				add_champ_into_hash_corewar(t_ch *champ, t_cw *hash);
+
+void				hexdump_bytes_corewar(char *bytes, unsigned int size);
+
+void				hexdump_core_corewar(t_cw *hash);
 
 #endif
