@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   doubly_linked_list.c                               :+:      :+:    :+:   */
+/*   ft_doubly_linked_list.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scamargo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 21:32:37 by scamargo          #+#    #+#             */
-/*   Updated: 2018/03/06 22:19:47 by scamargo         ###   ########.fr       */
+/*   Updated: 2018/03/06 22:30:38 by scamargo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ void		ft_doublyadd(t_doubly **alst, t_doubly *new)
 	*alst = new;
 }
 
-t_doubly	*ft_doublydelone(t_doubly **curr, t_doubly **head, void (*del)(void *, size_t))
+void		ft_doublydelone(t_doubly **current, t_doubly **head, void (*del)(void *, size_t))
 {
 	t_doubly	*prev;
 	t_doubly	*next;
 
-	prev = (*curr)->prev;
-	next = (*curr)->next;
+	prev = (*current)->prev;
+	next = (*current)->next;
 	if (*head == *current)
 	{
 		*head = next;
@@ -35,22 +35,20 @@ t_doubly	*ft_doublydelone(t_doubly **curr, t_doubly **head, void (*del)(void *, 
 		prev->next = next;
 	if (next != NULL)
 		next->prev = prev;
-	del(curr->content, curr->content_size);
-	free(curr);
-	*curr = next;
+	del((*current)->content, (*current)->content_size);
+	free(*current);
+	*current = next;
 }
 
 int		ft_doublycount(t_doubly *list)
 {
 	t_doubly	*temp;
-	t_process	*curr;
 	int			i;
 
 	i = 0;
 	temp = list;
 	while (temp != NULL)
 	{
-		curr = temp->content;
 		temp = temp->next;
 		i++;
 	}

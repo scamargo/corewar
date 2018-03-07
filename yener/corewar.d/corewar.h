@@ -6,7 +6,7 @@
 /*   By: ytuz <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 13:32:35 by ytuz              #+#    #+#             */
-/*   Updated: 2018/03/06 22:09:43 by scamargo         ###   ########.fr       */
+/*   Updated: 2018/03/06 22:25:13 by scamargo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct		s_pc
 	char			registry[REG_NUMBER];
 	unsigned int	process_counter;
 	unsigned char	cycles_to_wait;
+	struct s_pc		*next; //TODO: remove
 }					t_pc;
 
 typedef struct		s_ch
